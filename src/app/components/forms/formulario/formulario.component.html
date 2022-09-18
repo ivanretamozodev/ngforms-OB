@@ -1,0 +1,47 @@
+<!-- Formulario Reactivo Basico -->
+<form [formGroup]="form">
+  <!-- Previsualizacion de los componentes de los formularios -->
+  <h3>datos del formulario</h3>
+  <pre>{{ form.value | json }}</pre>
+  <!-- Campos del formulario -->
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="ingrese su nombre"
+      formControlName="name"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="ingrese su apellido"
+      formControlName="lastname"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="ingrese su email"
+      formControlName="email"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="ingrese su direccion"
+      formControlName="address"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="ingrese su telefono"
+      formControlName="phone"
+    />
+  </mat-form-field>
+</form>
