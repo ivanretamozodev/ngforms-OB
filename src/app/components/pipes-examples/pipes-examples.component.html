@@ -1,0 +1,27 @@
+<h1>Pipes Nativos de Angular</h1>
+
+<!-- pipes para fechas -->
+<h3>Pipes para fechas</h3>
+<p>
+  mi cumpleaños sin pipe : <strong>{{ dob }}</strong>
+</p>
+<p>
+  mi cumpleaños con PIPE DATE es: <strong>{{ dob | date }}</strong>
+</p>
+<p>
+  mi cumpleaños con PIPE DATE "dd/MM/yyy" es:
+  <strong>{{ dob | date: "dd/MM/yyyy" }}</strong>
+</p>
+<p>
+  mi cumpleaños con PIPE DATE "short" es:
+  <strong>{{ dob | date: "shortDate" }}</strong>
+</p>
+<p>
+  mi cumpleaños con PIPE DATE "full" es:
+  <strong>{{ dob | date: "fullDate" }}</strong>
+</p>
+
+<h2>Mayusculas/Minusculas</h2>
+
+<p>Bienvenido,{{ name | uppercase }}</p>
+<p>Nombre de usuario,@{{ name | lowercase }}</p>

@@ -11,6 +11,7 @@ import { FormularioComponent } from './components/forms/formulario/formulario.co
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
 import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
 import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
+import { PipesExamplesComponent } from './components/pipes-examples/pipes-examples.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     FormularioAnidadoComponent,
     FormularioArrayComponent,
     FormularioValidadoComponent,
+    PipesExamplesComponent,
   ],
   imports: [
     BrowserModule,
