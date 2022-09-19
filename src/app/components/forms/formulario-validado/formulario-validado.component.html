@@ -1,1 +1,58 @@
-<p>formulario-validado works!</p>
+<form [formGroup]="validatedForm" (click)="sendForm()">
+  <h3>Datos en vivo del formulario</h3>
+  <pre>{{ validatedForm.value | json }}</pre>
+  <!-- Campos de formulario mas mensajes de error -->
+
+  <input matInput placeholder="ingrese su nombre" formControlName="name" />
+  <div *ngIf="name?.errors?.['required'] && name?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">El nombre es obligatorio</p>
+  </div>
+  <!-- campo apellido -->
+  <input
+    matInput
+    placeholder="ingrese su apellido"
+    formControlName="lastname"
+  />
+  <!-- campo edad -->
+  <input
+    type="number"
+    matInput
+    placeholder="ingrese su edad"
+    formControlName="age"
+  />
+  <div *ngIf="age?.errors?.['required'] && age?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">la edad es obligatoria</p>
+  </div>
+  <div *ngIf="age?.errors?.['min'] && age?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">la edad minima es 18</p>
+  </div>
+
+  <!-- Campo Email -->
+
+  <input matInput placeholder="ingrese su email" formControlName="email" />
+  <div *ngIf="email?.errors?.['required'] && email?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">El email es obligatorio</p>
+  </div>
+  <div *ngIf="email?.errors?.['email'] && email?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">El email no es valido</p>
+  </div>
+  <!-- Campo Password -->
+  <input
+    matInput
+    placeholder="ingrese una contraseña"
+    formControlName="password"
+  />
+  <div *ngIf="password?.errors?.['required'] && password?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">la contraseña es obligatoria</p>
+  </div>
+  <!-- Campo checkbox -->
+  <input type="checkbox" formControlName="accept" /> aceptar
+  <div *ngIf="accept?.errors?.['requiredTrue'] && accept?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">debes aceptar para continuar</p>
+  </div>
+
+  <!-- boton de submit que se activa si el formulario es valido -->
+  <button type="submit" [disabled]="validatedForm.invalid">
+    Enviar Formulario
+  </button>
+</form>
