@@ -1,1 +1,28 @@
-<p>formulario-anidado works!</p>
+<form [formGroup]="nestedForm">
+  <h3>Datos del formulario anidado</h3>
+  <pre>{{ nestedForm.value | json }}</pre>
+
+  <h4>Telefono de casa</h4>
+  <div formGroupName="phone">
+    <mat-form-field>
+      <input matInput placeholder="prefijo" formControlName="prefix" />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="telefono de su casa"
+        formControlName="phone"
+      />
+    </mat-form-field>
+  </div>
+  <!-- aqui agregamos el siguiente grupo  -->
+  <h4>Telefono Celular</h4>
+  <div formGroupName="cellPhone">
+    <mat-form-field>
+      <input matInput placeholder="prefijo" formControlName="prefix" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Telefono Celular" formControlName="phone" />
+    </mat-form-field>
+  </div>
+</form>

@@ -1,1 +1,35 @@
-<p>formulario-array works!</p>
+<form [formGroup]="arrayForm">
+  <h3>datos en vivo del formulario</h3>
+  <pre>{{ arrayForm.value | json }}</pre>
+  <!-- Campos de nombre y apellidos -->
+  <mat-form-field>
+    <input matInput placeholder="ingrese su nombre" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="ingrese sus apellidos"
+      formControlName="lastname"
+    />
+  </mat-form-field>
+  <!-- agrupacion de arrays de telefonos -->
+  <div formArrayName="phones">
+    <!-- iteramos sobre cada uno de los telefonos de la lista -->
+    <div
+      *ngFor="let phones of phonesOfForms.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <h5>Telefono - {{ i }}</h5>
+      <mat-form-field>
+        <input matInput placeholder="prefijo" formControlName="prefix" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="prefijo" formControlName="phone" />
+      </mat-form-field>
+      <button (click)="deletePhone(i)">Eliminar Telefono</button>
+    </div>
+  </div>
+
+  <!-- boton para añadir telefonos -->
+  <button (click)="addPhone()">Añadir un nuevo Telefono</button>
+</form>
