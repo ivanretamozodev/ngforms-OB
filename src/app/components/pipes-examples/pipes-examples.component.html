@@ -26,5 +26,14 @@
 <p>Bienvenido,{{ name | uppercase }}</p>
 <p>Nombre de usuario,@{{ name | lowercase }}</p>
 
-<!-- Pipe Personalizado -->
+<!-- Pipes Decimales -->
+<h2>Pipes Decimales</h2>
+
+<h2>Pipes Personalizados</h2>
+
+<!-- Pipe Personalizado  (multiplicar)-->
 <p>resultado: {{ 2 | multiplicar: "10" }} puntos</p>
+
+<!-- Pipe Personalizado (calcularPuntaje) -->
+<p>{{ player1 | calcularPuntaje }}</p>
+<p>{{ player2 | calcularPuntaje }}</p>

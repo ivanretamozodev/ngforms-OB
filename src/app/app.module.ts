@@ -13,6 +13,7 @@ import { FormularioArrayComponent } from './components/forms/formulario-array/fo
 import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
 import { PipesExamplesComponent } from './components/pipes-examples/pipes-examples.component';
 import { MultiplicarPipe } from './pipes/multiplicar.pipe';
+import { CalcularPuntajePipe } from './pipes/calcular-puntaje.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MultiplicarPipe } from './pipes/multiplicar.pipe';
     FormularioValidadoComponent,
     PipesExamplesComponent,
     MultiplicarPipe,
+    CalcularPuntajePipe,
   ],
   imports: [
     BrowserModule,
