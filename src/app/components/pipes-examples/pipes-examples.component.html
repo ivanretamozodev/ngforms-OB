@@ -20,14 +20,36 @@
   mi cumpleaños con PIPE DATE "full" es:
   <strong>{{ dob | date: "fullDate" }}</strong>
 </p>
-
+<!-- Pipe Mayusculas/Minusculas -->
 <h2>Mayusculas/Minusculas</h2>
-
 <p>Bienvenido,{{ name | uppercase }}</p>
 <p>Nombre de usuario,@{{ name | lowercase }}</p>
 
+<!-- Pipes Monedas (Currency) -->
+<h2>Pipe Moneda</h2>
+<p>Precio del Carrito {{ price | currency: "EUR" }}</p>
+<p>Precio del Carrito {{ price | currency: "USD" }}</p>
+<p>Precio del Carrito {{ price | currency: "EUR":true:".2-2" }}</p>
+
+<!-- Pipe Porcentajes -->
+<h2>Pipes Porcentajes</h2>
+<p>Porcentajes de votos obtenidos: {{ cantidad | percent: "2.2-2" }}</p>
+
+<!-- Pipes Slice -->
+<h2>Pipe Slice</h2>
+<p>Texto Demaciado Largo : {{ textoLargo }}</p>
+<p>Texto Demaciado Largo con PIPE SLICE : {{ textoLargo | slice: 0:10 }}...</p>
+
+<!-- Pipe JSON -->
+<h2>Pipe JSON</h2>
+<p>asi se ve un objeto sin pipe: {{ persona }}</p>
+<p>asi se ve un objeto con pipe JSON: {{ persona | json }}</p>
+
 <!-- Pipes Decimales -->
 <h2>Pipes Decimales</h2>
+<p>numero PI (3 Decimales) {{ PI | number: ".3-3" }}</p>
+<p>numero PI (5 Decimales) {{ PI | number: ".5-5" }}</p>
+<p>numero PI (2 Enteros y 7 Decimales) {{ PI | number: "2.7-7" }}</p>
 
 <h2>Pipes Personalizados</h2>
 

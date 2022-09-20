@@ -1,9 +1,13 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+//locale para Pipes
+import { registerLocaleData } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES); //registramos el locale
 
 import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
@@ -34,7 +38,12 @@ import { CalcularPuntajePipe } from './pipes/calcular-puntaje.pipe';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'es',
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
