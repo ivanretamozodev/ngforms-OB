@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 //locale para Pipes
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
-registerLocaleData(localeES); //registramos el locale
+registerLocaleData(localeES); //registramos el locale_id
 
 import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
 import { PipesExamplesComponent } from './components/pipes-examples/pipes-examples.component';
 import { MultiplicarPipe } from './pipes/multiplicar.pipe';
 import { CalcularPuntajePipe } from './pipes/calcular-puntaje.pipe';
+import { EjemploAnimacionComponent } from './components/ejemplo-animacion/ejemplo-animacion.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CalcularPuntajePipe } from './pipes/calcular-puntaje.pipe';
     PipesExamplesComponent,
     MultiplicarPipe,
     CalcularPuntajePipe,
+    EjemploAnimacionComponent,
   ],
   imports: [
     BrowserModule,

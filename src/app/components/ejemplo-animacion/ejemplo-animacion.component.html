@@ -1,0 +1,23 @@
+<div class="container">
+  <div [@animaciones]="state" class="caja">
+    <p>Ejemplo de animación {{ state }}</p>
+    <div class="button__container">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="cambiarEstadoActivado()"
+      >
+        {{ state == "active" ? "desactivar" : "activar" }}
+      </button>
+      <button mat-raised-button color="primary" (click)="subir()">
+        Subir Caja 🔼
+      </button>
+      <button mat-raised-button color="warn" (click)="rotar()">
+        rotar Caja 🔽
+      </button>
+      <button mat-raised-button color="warn" (click)="cambiarTamanioActivado()">
+        {{ state == "original" ? "ampliar" : "tamaño original" }}
+      </button>
+    </div>
+  </div>
+</div>

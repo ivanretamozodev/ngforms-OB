@@ -1,0 +1,15 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.caja {
+  height: 300px;
+  width: 300px;
+  background-color: tomato;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: 1px;
+}
